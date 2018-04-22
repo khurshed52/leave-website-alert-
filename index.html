@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sweet Alert - Leave Site</title>
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.0.1/sweetalert.min.css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <style type="text/css">
+    body {
+background-color: #eee;
+text-align: center;
+}
+
+.btn-common {
+    color: #fff;
+    background-color: #ff5252;
+    border: 0;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+}
+
+.external-link {
+  position: relative;
+}
+.external-link:after {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f35d";
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: inherit;
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+  }
+  </style>
+
+</head>
+
+<body>
+  <button href="http://khurshedkhan.com/" class="btn-common external-link">External Link  </button>
+
+  <!--script-->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.0.1/sweetalert.min.js'></script>
+
+<script type="text/javascript">
+  $('.external-link').on('click',function(){
+
+var getLink = $(this).attr('href');
+
+swal({
+  title: 'You&#39;re Leaving This Site!',
+  text: 'This is a link to an external site. Click Yes to continue to the content',
+  html: true,
+  confirmButtonText: "Yes",
+  cancelButtonText: "No", 
+  confirmButtonColor: '#2ecc71',
+  showCancelButton: true,
+  allowOutsideClick: true
+},function(){
+
+window.open(getLink,'_blank')
+
+});
+
+return false;
+
+});
+</script>
+
+</body>
+</html>
